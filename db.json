@@ -1,0 +1,32 @@
+{
+  "customers": [
+    {
+      "firstName": "Noam",
+      "lastName": "Muchtar",
+      "email": "noam@webify.co.il",
+      "phone": "0542519595",
+      "id": "1"
+    },
+    {
+      "firstName": "Ari",
+      "lastName": "Muchtar",
+      "email": "ari@webify.co.il",
+      "phone": "0505555555",
+      "id": "9dec"
+    },
+    {
+      "id": "3a90",
+      "firstName": "Naya",
+      "lastName": "Muchtar",
+      "email": "naya@webify.co.il",
+      "phone": "0542519596"
+    },
+    {
+      "id": "15a5",
+      "firstName": "David",
+      "lastName": "Bitan",
+      "email": "noam@noam-muchtar.co.il",
+      "phone": "0542519595"
+    }
+  ]
+}
