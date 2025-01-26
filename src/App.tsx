@@ -4,10 +4,12 @@ import Customers from "./components/Customers";
 import AddCustomer from "./components/AddCustomer";
 import UpdateCustomer from "./components/UpdateCustomer";
 import PageNotFound from "./components/PageNotFound";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <>
+      <ToastContainer />
       <Router>
         <Routes>
           <Route path="/" element={<Customers />} />

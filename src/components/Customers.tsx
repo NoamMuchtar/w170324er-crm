@@ -2,6 +2,7 @@ import { FunctionComponent, useEffect, useState } from "react";
 import { Customer } from "../interfaces/Customer";
 import { deleteCustomer, getAllCustomers } from "../services/CustomerService";
 import { useNavigate } from "react-router-dom";
+import { errorMessage, successMessage } from "../services/feedbackService";
 
 interface CustomersProps {}
 
@@ -60,12 +61,17 @@ const Customers: FunctionComponent<CustomersProps> = () => {
                         if (window.confirm("Are you sure?")) {
                           deleteCustomer(customer.id as string)
                             .then(() => {
-                              window.alert(
+                              successMessage(
                                 `${customer.email} Deleted successfuly`
                               );
                               setCustomersChanged(!customersChanged);
                             })
-                            .catch((err) => console.log(err));
+                            .catch((err) => {
+                              errorMessage(
+                                "Error, user not deleted. Please try again..."
+                              );
+                              console.log(err);
+                            });
                         }
                       }}
                     ></i>

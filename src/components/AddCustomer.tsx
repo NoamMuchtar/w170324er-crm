@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { addCustomer } from "../services/CustomerService";
 import { Customer } from "../interfaces/Customer";
 import { useNavigate } from "react-router-dom";
+import { successMessage } from "../services/feedbackService";
 
 interface AddCustomerProps {}
 
@@ -26,10 +27,14 @@ const AddCustomer: FunctionComponent<AddCustomerProps> = () => {
       phone: yup
         .string()
         .required()
-        .matches(/^(\+972|0)(5[0-9])-?\d{7}$/),
+        .matches(
+          /^(\+972|0)(5[0-9])-?\d{7}$/,
+          "Phone must be a valid Israeli phone number"
+        ),
     }),
     onSubmit: (values) => {
       addCustomer(values as Customer);
+      successMessage("Customer was added successfuly");
       navigate("/");
     },
   });
